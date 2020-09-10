@@ -725,6 +725,8 @@ b, strong { font-weight: bold; }
 			font-size: 12px;
 			line-height: 22px;
 			font-weight: bold;
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
 		}
 
 		#works a.permalink:hover h3 { color: #111; }
@@ -813,7 +815,7 @@ b, strong { font-weight: bold; }
 		#works.stackgrid.images-only a.link-next { border-top: none; }
 
 			#works.stackgrid .item .box-desc span.category {
-				margin-bottom: 2px;
+				margin-bottom: 12px;
 			}
 
 
