@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19">
+
+    
+  <!-- Spot Style - Default Point Spot WIT -->
+  <style name="IconDefaultPointSpotWIT"
+         url="%FIRSTXML%/spots/hotspot_animated_user_defaultpoint0111.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="64"
+         frameheight="64"
+         stopspotsequence="false"
+         crop="0|0|64|64"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotWIT"
+         onout="onoutIconDefaultPointSpotWIT"
+
+         height="50"
+         width="50"
+         />
+
+  <action name="onhoverIconDefaultPointSpotWIT">
+    showtooltip('hotspot');
+  </action>
+
+
+  <action name="onoutIconDefaultPointSpotWIT">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - Default Point Spot ZWART -->
+  <style name="IconDefaultPointSpotZWART"
+         url="%FIRSTXML%/spots/hotspot_animated_user_defaultpoint111.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="64"
+         frameheight="64"
+         stopspotsequence="false"
+         crop="0|0|64|64"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotZWART"
+         onout="onoutIconDefaultPointSpotZWART"
+
+         height="50"
+         width="50"
+         />
+
+  <action name="onhoverIconDefaultPointSpotZWART">
+    showtooltip('hotspot');
+  </action>
+
+
+  <action name="onoutIconDefaultPointSpotZWART">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - info spot style -->
+  <style name="Iconinfospotstyle"
+         url="%FIRSTXML%/spots/hotspot_information_user_defaultpoint2.png"
+         visible="false"
+         onhover="onhoverIconinfospotstyle"
+         onover="onoverIconinfospotstyle"
+         onout="onoutIconinfospotstyle"
+
+         height="50"
+         width="50"
+         />
+
+  <action name="onhoverIconinfospotstyle">
+    showtooltip('hotspot');
+  </action>
+
+  <action name="onoverIconinfospotstyle">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+
+  <action name="onoutIconinfospotstyle">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+</krpano>
