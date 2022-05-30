@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Bart Beeckmans | Portfolio + CV</title>
+	<meta name="description" content="Portfolio + CV">
+	<meta name="author" content="Bart Beeckmans">
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS Files
+	* cssreset-min.css 			- CSS reset
+	* typegrid.css				- Responsive grid system
+	* style.css					- Main CSS file
+
+	Original LESS Stylesheet
+	<link rel="stylesheet/less" type="text/css" href="css/style.less" />
+	================================================== -->
+	<link rel="stylesheet" type="text/css" href="https://yui.yahooapis.com/3.8.0/build/cssreset/cssreset-min.css">
+	<link rel="stylesheet" type="text/css" href="css/typegrid.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+	<!--[if lt IE 8]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+	<!-- Comparison slider script-->
+	<script>
+	function initComparisons() {
+		var x, i;
+		/* Find all elements with an "overlay" class: */
+		x = document.getElementsByClassName("img-comp-overlay");
+		for (i = 0; i < x.length; i++) {
+		  /* Once for each "overlay" element:
+		  pass the "overlay" element as a parameter when executing the compareImages function: */
+		  compareImages(x[i]);
+		}
+		function compareImages(img) {
+		  var slider, img, clicked = 0, w, h;
+		  /* Get the width and height of the img element */
+		  w = img.offsetWidth;
+		  h = img.offsetHeight;
+		  /* Set the width of the img element to 50%: */
+		  img.style.width = (w / 2) + "px";
+		  /* Create slider: */
+		  slider = document.createElement("DIV");
+		  slider.setAttribute("class", "img-comp-slider");
+		  /* Insert slider */
+		  img.parentElement.insertBefore(slider, img);
+		  /* Position the slider in the middle: */
+		  slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+		  slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+		  /* Execute a function when the mouse button is pressed: */
+		  slider.addEventListener("mousedown", slideReady);
+		  /* And another function when the mouse button is released: */
+		  window.addEventListener("mouseup", slideFinish);
+		  /* Or touched (for touch screens: */
+		  slider.addEventListener("touchstart", slideReady);
+		   /* And released (for touch screens: */
+		  window.addEventListener("touchend", slideFinish);
+		  function slideReady(e) {
+			/* Prevent any other actions that may occur when moving over the image: */
+			e.preventDefault();
+			/* The slider is now clicked and ready to move: */
+			clicked = 1;
+			/* Execute a function when the slider is moved: */
+			window.addEventListener("mousemove", slideMove);
+			window.addEventListener("touchmove", slideMove);
+		  }
+		  function slideFinish() {
+			/* The slider is no longer clicked: */
+			clicked = 0;
+		  }
+		  function slideMove(e) {
+			var pos;
+			/* If the slider is no longer clicked, exit this function: */
+			if (clicked == 0) return false;
+			/* Get the cursor's x position: */
+			pos = getCursorPos(e)
+			/* Prevent the slider from being positioned outside the image: */
+			if (pos < 0) pos = 0;
+			if (pos > w) pos = w;
+			/* Execute a function that will resize the overlay image according to the cursor: */
+			slide(pos);
+		  }
+		  function getCursorPos(e) {
+			var a, x = 0;
+			e = (e.changedTouches) ? e.changedTouches[0] : e;
+			/* Get the x positions of the image: */
+			a = img.getBoundingClientRect();
+			/* Calculate the cursor's x coordinate, relative to the image: */
+			x = e.pageX - a.left;
+			/* Consider any page scrolling: */
+			x = x - window.pageXOffset;
+			return x;
+		  }
+		  function slide(x) {
+			/* Resize the image: */
+			img.style.width = x + "px";
+			/* Position the slider: */
+			slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+		  }
+		}
+	  }
+	</script>
+</head>
+
+<body>
+
+
+	<!-- Header - Half Logo
+	================================================== -->
+	<section id="header">
+
+		<!-- * * * * * * * * * * * * * * * * * * * * * * *
+
+			Top Bar & Menu (#nav)
+
+		* * * * * * * * * * * * * * * * * * * * * * * * -->
+		<div class="topbar">
+			<div class="container">
+
+				<!--
+					A custom jQuery plugin called typeMenu handles the menu
+					Add .hide-on-mobile to <li> elements to hide a specific item on mobile viewports
+				-->
+				<ul id="nav" class="full">
+					<li>
+						<a href="about.html">
+							<span class="count hide-on-mobile">01.</span>
+							About me
+						</a>
+					</li>
+					<li>
+						<a href="index.html">
+							<span class="count hide-on-mobile">02.</span>
+							Portfolio
+						</a>
+					</li>
+				</ul><!-- // #nav -->
+
+			</div><!-- // .container -->
+		</div><!-- // .topbar -->
+
+		<div class="logo-wrap">
+			<div class="container">
+				<div class="desktop-6 columns">
+					<h1><a href="index.html" title="Home"><img src="images/bb/logo_text_half.svg" alt="" /></a></h1>
+				</div><!-- // .desktop-6 -->
+
+				<div class="desktop-6 columns">
+					<p class="site-desc">
+						<a href="mailto:beeckmans.bart@telenet.be">Bart Beeckmans</a><br />
+						<span class="font-color-primary">Offline, online and beyond…</span>
+					</p><!-- // .site-desc -->
+				</div><!-- // .desktop-6 -->
+
+				<div class="clear"></div>
+			</div><!-- // .container -->
+		</div><!-- // .logo-wrap -->
+	</section><!-- // #header -->
+
+
+	<!-- Work - Single Page (Left Sidebar)
+	================================================== -->
+	<section id="works" class="page single">
+		<div class="container">
+
+			<div class="desktop-3 tablet-12 nested columns">
+
+				<div class="sidebar sticky">
+
+					<div class="desktop-3 tablet-12 columns">
+
+						<div class="box-info">
+							<h3 class="border-top">3D viz</h3>
+							<p class="project-desc">2016</p>
+
+							<p>3D visuals for presentation of concepts or as key visual.</p>
+						</div><!-- // .box-info -->
+
+					</div><!-- // .desktop-3 -->
+
+					<div class="desktop-3 tablet-6 mobile-half columns">
+
+						<div class="box-info">
+							<h4 class="border-top">Category</h4>
+							<p>
+								3D visualisation
+							</p>
+						</div><!-- // .box-info -->
+
+					</div><!-- // .desktop-3 -->
+
+					<div class="desktop-3 tablet-6 mobile-half columns">
+
+						<div class="box-info">
+							<h4 class="border-top">Client</h4>
+							<p>miscellaneous</p>
+						</div><!-- // .box-info -->
+
+					</div><!-- // .desktop-3 -->
+
+					<div class="clear"></div>
+
+				</div><!-- // .sticky -->
+
+			</div><!-- // .desktop-3 .nested -->
+
+			<div class="desktop-9 tablet-12 columns">
+
+				<video style="margin-bottom:15px; width: 100%; height: auto;" src="images/bb/Alcon_DM_Zomerfestival_3luik-anim.mp4" 	preload playsinline muted loop autoplay></video>
+				<video style="margin-bottom:15px; width: 100%; height: auto;" src="images/bb/Alcon Festival pack_mockup-3D_v8_DEF.mp4" 	preload playsinline muted loop autoplay></video>
+				<img style="margin-bottom:15px;" src="images/bb/Escenteau-blueprint-combo.jpg" alt="" />
+				<img style="margin-bottom:15px;" src="images/bb/Escenteau-PRES-V5-12.jpg" alt="" />
+				<img style="margin-bottom:15px;" src="images/bb/GoldSin_Flower-bloom-2D+3D_pakchots.png" alt="" />
+
+
+			</div><!-- // .desktop-9 -->
+
+			<div class="clear"></div>
+
+		</div><!-- // .container -->
+	</section><!-- // section -->
+
+
+
+
+	<!-- Footer
+	================================================== -->
+	<section id="footer">
+	<div class="container">
+	  <div class="desktop-3 columns">
+	    <p>Copyright &copy; <a href="mailto:beeckmans.bart@telenet.be" class="italic">Bart Beeckmans</a></p>
+	  </div><!-- // .desktop-3 -->
+
+	  <div class="desktop-9 columns">
+	    <ul id="social">
+	      <!-- <li><a href="http://www.twitter.com" class="hoverMe">Twitter</a></li>
+	      <li><a href="http://www.google.com" class="hoverMe">Google+</a></li> -->
+	    </ul><!-- // #social -->
+	  </div><!-- // .desktop-9 -->
+
+	  <div class="clear"></div>
+	</div><!-- // .container -->
+	</section><!-- // section#footer -->
+
+
+	<!-- JS
+	================================================== -->
+	<!--
+	Flexslider 2.1 has known issues of manualControls setting with jQuery 1.9~
+	Use jQuery 1.8 until Flexslider 2.2 stable version is released
+	-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/jQuery.BlackAndWhite.min.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/less-1.4.0.min.js"></script>
+	<script src="js/jquery.typeMenu.js"></script>
+	<script src="js/jquery.typeSticky.js"></script>
+
+
+
+
+
+
+
+
+
+
+	<script src="js/jquery.custom.js"></script>
+
+
+	<script>
+		const slider = document.querySelector(".slider input");
+		const img = document.querySelector(".images .img-2");
+		const dragLine = document.querySelector(".slider .drag-line");
+		slider.oninput = ()=>{
+		  let sliderVal = slider.value;
+		  dragLine.style.left = sliderVal + "%";
+		  img.style.width = sliderVal + "%";
+		}
+	  </script>
+
+
+	<!-- End Document
+	================================================== -->
+	</body>
+	</html>
